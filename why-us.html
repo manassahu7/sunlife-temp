@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Choose Us | Sunlife Meditech</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .reasons { padding: 90px 6%; background: var(--white); }
+    .reasons-inner { max-width: 1100px; margin: 0 auto; }
+    .reasons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 50px; }
+    .reason-card { background: var(--cream); border-radius: 18px; padding: 36px 30px; transition: all 0.25s; border: 2px solid transparent; }
+    .reason-card:hover { background: white; border-color: var(--blue); box-shadow: 0 8px 32px rgba(0,86,140,0.1); transform: translateY(-4px); }
+    .rc-num { font-size: 42px; font-weight: 800; color: rgba(0,86,140,0.1); line-height: 1; margin-bottom: 16px; }
+    .rc-icon { font-size: 32px; margin-bottom: 14px; }
+    .rc-title { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+    .rc-body { font-size: 14px; color: var(--muted); line-height: 1.85; }
+    .comparison { padding: 90px 6%; background: var(--cream); }
+    .comparison-inner { max-width: 1000px; margin: 0 auto; }
+    .comp-table { width: 100%; border-collapse: collapse; margin-top: 44px; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .comp-table th { padding: 18px 24px; text-align: left; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .comp-table th:first-child { background: var(--blue); color: white; width: 40%; }
+    .comp-table th:nth-child(2) { background: var(--orange); color: white; text-align: center; }
+    .comp-table th:last-child { background: #e2e8f0; color: var(--muted); text-align: center; }
+    .comp-table td { padding: 16px 24px; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text); }
+    .comp-table td:nth-child(2), .comp-table td:last-child { text-align: center; font-size: 18px; }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .comp-table tr:hover td { background: var(--cream); }
+    .testimony { padding: 90px 6%; background: var(--dark); }
+    .testimony-inner { max-width: 1100px; margin: 0 auto; }
+    .testimony-inner .sec-title { color: white; }
+    .testimony-inner .sec-title span { color: var(--orange); }
+    .testimony-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 50px; }
+    .test-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 30px 26px; }
+    .test-quote { font-size: 32px; color: var(--orange); line-height: 1; margin-bottom: 14px; }
+    .test-body { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.85; margin-bottom: 20px; font-style: italic; }
+    .test-author { font-size: 13px; font-weight: 700; color: white; }
+    .test-role { font-size: 12px; color: var(--orange); margin-top: 2px; }
+    .cta-section { padding: 90px 6%; background: var(--blue); }
+    .cta-section-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    .cta-section-inner h2 { font-size: clamp(28px,4vw,44px); font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.2; }
+    .cta-section-inner p { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 30px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-white { background: white; color: var(--blue); padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; transition: all 0.2s; }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .btn-outline-white { color: white; border: 2px solid rgba(255,255,255,0.4); padding: 12px 32px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.2s; }
+    .btn-outline-white:hover { border-color: white; }
+    @media (max-width: 960px) { .reasons-grid { grid-template-columns: 1fr; } .testimony-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .comp-table th, .comp-table td { padding: 12px 14px; } }
+  </style>
+</head>
+<body>
+<nav id="mainNav" class="solid">
+  <a href="index.html" class="logo-wrap"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="why-us.html" class="active">Why Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-btn">Get in Touch</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Why Choose Us</div>
+    <h1>Why Hospitals <span>Choose Sunlife</span></h1>
+    <p>We do not just supply products. We build partnerships that keep healthcare running without interruption.</p>
+  </div>
+</div>
+<section class="reasons">
+  <div class="reasons-inner">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto;">
+      <div class="sec-tag" style="justify-content:center">Our Strengths</div>
+      <h2 class="sec-title" style="margin-top:10px">What Sets Us <span>Apart</span></h2>
+    </div>
+    <div class="reasons-grid">
+      <div class="reason-card reveal"><div class="rc-num">01</div><div class="rc-icon">&#127991;</div><div class="rc-title">One Trusted Brand</div><div class="rc-body">Every product is supplied under the Sunlife Meditech brand name. Your hospital procurement team deals with a single, accountable brand for every product category, making quality management straightforward.</div></div>
+      <div class="reason-card reveal"><div class="rc-num">02</div><div class="rc-icon">&#128666;</div><div class="rc-title">Reliable, On-Time Delivery</div><div class="rc-body">Our supply chain is built around reliability. We understand that delays in medical supplies can have serious consequences. Our logistics network ensures your orders arrive when expected, every time.</div></div>
+      <div class="reason-card reveal"><div class="rc-num">03</div><div class="rc-icon">&#128203;</div><div class="rc-title">Complete Product Portfolio</div><div class="rc-body">From surgical instruments and OT consumables to personal hygiene and general medical supplies, we cover every category your hospital needs. One supplier. One invoice. No need to manage multiple vendor relationships.</div></div>
+      <div class="reason-card reveal"><div class="rc-num">04</div><div class="rc-icon">&#9989;</div><div class="rc-title">Quality You Can Count On</div><div class="rc-body">Every product in our portfolio is selected and quality-checked before it reaches you. We hold ourselves to the same standards your hospital holds its clinical staff, because your patients deserve nothing less.</div></div>
+      <div class="reason-card reveal"><div class="rc-num">05</div><div class="rc-icon">&#129309;</div><div class="rc-title">Dedicated Account Support</div><div class="rc-body">You are not just an order number to us. You have a dedicated account contact who knows your hospital requirements and is available to resolve queries, manage orders and handle any issues promptly.</div></div>
+      <div class="reason-card reveal"><div class="rc-num">06</div><div class="rc-icon">&#128230;</div><div class="rc-title">Flexible Ordering</div><div class="rc-body">Whether you are a single-facility clinic or a large multi-specialty hospital, we accommodate your scale. Bulk orders, regular replenishment contracts and custom requirements are all handled with the same level of care.</div></div>
+    </div>
+  </div>
+</section>
+<section class="comparison">
+  <div class="comparison-inner">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto;">
+      <div class="sec-tag" style="justify-content:center">The Difference</div>
+      <h2 class="sec-title" style="margin-top:10px">Sunlife Meditech vs <span>Multiple Suppliers</span></h2>
+    </div>
+    <table class="comp-table reveal">
+      <thead><tr><th>What Matters to Hospitals</th><th>Sunlife Meditech</th><th>Multiple Suppliers</th></tr></thead>
+      <tbody>
+        <tr><td>Single point of contact for all products</td><td>&#9989;</td><td>&#10060;</td></tr>
+        <tr><td>Consistent brand quality across categories</td><td>&#9989;</td><td>&#10060;</td></tr>
+        <tr><td>Reliable and predictable delivery</td><td>&#9989;</td><td>&#10060;</td></tr>
+        <tr><td>Simplified invoicing and procurement</td><td>&#9989;</td><td>&#10060;</td></tr>
+        <tr><td>Dedicated account management</td><td>&#9989;</td><td>&#10060;</td></tr>
+        <tr><td>Bulk and custom order flexibility</td><td>&#9989;</td><td>&#10060;</td></tr>
+        <tr><td>Full product range availability</td><td>&#9989;</td><td>&#10060;</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="testimony">
+  <div class="testimony-inner">
+    <div class="reveal">
+      <div class="sec-tag" style="color:var(--orange)"><span style="background:var(--orange);width:28px;height:2px;display:block"></span>What Hospitals Say</div>
+      <h2 class="sec-title" style="margin-top:10px">Trusted by <span>Healthcare Teams</span></h2>
+    </div>
+    <div class="testimony-grid">
+      <div class="test-card reveal"><div class="test-quote">"</div><div class="test-body">Having a single supplier for all our medical consumables has simplified our procurement process significantly. The quality is consistent and deliveries are always on time.</div><div class="test-author">Procurement Head</div><div class="test-role">Multi-specialty Hospital</div></div>
+      <div class="test-card reveal"><div class="test-quote">"</div><div class="test-body">Sunlife Meditech understands the urgency of hospital supply needs. Their dedicated support team and reliable delivery have made them an essential partner for our facility.</div><div class="test-author">Operations Manager</div><div class="test-role">Surgical Centre</div></div>
+      <div class="test-card reveal"><div class="test-quote">"</div><div class="test-body">The range of products available under one brand is impressive. We no longer have to coordinate with multiple vendors, which saves our team considerable time and effort.</div><div class="test-author">Hospital Administrator</div><div class="test-role">Healthcare Group</div></div>
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="cta-section-inner reveal">
+    <h2>Ready to Experience the Sunlife Difference?</h2>
+    <p>Join hospitals that trust Sunlife Meditech for their complete medical supply needs. Send us your requirements and we will get back to you within 24 hours.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn-white">Send an Enquiry</a>
+      <a href="products.html" class="btn-outline-white">View All Products</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></div>
+      <p>A hospitals trusted medical product supplier delivering quality surgical, OT, hygiene and general medical supplies across the globe.</p>
+      <div class="footer-offices">
+        
+        <div class="fo-block"><div class="fo-label">Registered Office</div><div class="fo-addr">C-11, DSIDC, Patparganj Industrial Area,<br>New Delhi, 110092</div></div>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">Surgical Supplies</a></li><li><a href="products.html">OT Equipment</a></li><li><a href="products.html">Hygiene Products</a></li><li><a href="products.html">Patient Care</a></li><li><a href="products.html">General Medical</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&#169; 2026 <span>Sunlife Meditech</span>. All rights reserved.</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

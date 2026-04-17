@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sunlife Meditech | Hospitals Trusted Medical Supplier</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    /* SPLASH SCREEN */
+    #splash { position: fixed; inset: 0; z-index: 9999; background: #0a1520; display: flex; align-items: center; justify-content: center; transition: opacity 0.6s ease; }
+    #splash.hide { opacity: 0; pointer-events: none; }
+    #splash-logo { width: 380px; animation: splashPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+    @keyframes splashPop { 0%{opacity:0;transform:scale(0.3)} 100%{opacity:1;transform:scale(1)} }
+    #splash-logo.fly-up { transition: transform 0.9s cubic-bezier(0.4,0,0.2,1), opacity 0.5s ease, width 0.8s ease; transform: translateY(-120vh) scale(0.25); opacity: 0; width: 80px; }
+    body.splash-active { overflow: hidden; }
+  </style>
+  <style>
+    #home-hero { min-height: 100vh; background: var(--dark); display: flex; align-items: center; padding: 100px 6% 80px; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,86,140,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,86,140,0.12) 1px, transparent 1px); background-size: 55px 55px; animation: bgScroll 25s linear infinite; }
+    @keyframes bgScroll { from{transform:translateY(0)} to{transform:translateY(55px)} }
+    .hero-glow { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,100,180,0.22) 0%, transparent 70%); top: -150px; right: -100px; }
+    .hero-glow2 { position: absolute; width: 350px; height: 350px; border-radius: 50%; background: radial-gradient(circle, rgba(253,150,28,0.1) 0%, transparent 70%); bottom: -80px; left: 30%; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; position: relative; z-index: 2; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(253,150,28,0.15); border: 1px solid rgba(253,150,28,0.3); color: var(--orange); padding: 7px 16px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 24px; }
+    .hero-badge .dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: blink 1.6s ease infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero-h1 { font-size: clamp(38px, 5vw, 62px); font-weight: 800; line-height: 1.1; color: white; margin-bottom: 20px; }
+    .hero-h1 .accent { color: var(--orange); }
+    .hero-p { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.6); max-width: 460px; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--orange); color: white; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; transition: all 0.2s; box-shadow: 0 6px 24px rgba(253,150,28,0.35); }
+    .btn-primary:hover { background: var(--orange-deep); transform: translateY(-2px); }
+    .btn-outline { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 500; text-decoration: none; padding: 14px 28px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; transition: all 0.2s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.5); color: white; }
+    .hero-panel { display: flex; flex-direction: column; gap: 14px; }
+    .hp-top { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 26px; }
+    .hp-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+    .hp-cats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hp-cat { background: rgba(0,86,140,0.28); border: 1px solid rgba(0,114,184,0.2); border-radius: 9px; padding: 11px 13px; font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 500; display: flex; align-items: center; gap: 7px; }
+    .hp-cat .dot { width: 5px; height: 5px; background: var(--orange); border-radius: 50%; flex-shrink: 0; }
+    .hp-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .hp-card { border-radius: 14px; padding: 20px 18px; }
+    .hp-card.blue { background: var(--blue); }
+    .hp-card.orange { background: var(--orange); }
+    .hp-card .hc-icon { font-size: 24px; margin-bottom: 10px; }
+    .hp-card .hc-title { font-size: 14px; font-weight: 700; color: white; margin-bottom: 3px; }
+    .hp-card .hc-sub { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+    .intro-strip { background: var(--blue); padding: 50px 6%; }
+    .intro-strip-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
+    .is-item { text-align: center; }
+    .is-item .is-icon { font-size: 32px; margin-bottom: 12px; }
+    .is-item .is-title { font-size: 16px; font-weight: 700; color: white; margin-bottom: 6px; }
+    .is-item .is-body { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+    .about-preview { padding: 90px 6%; background: var(--cream); }
+    .about-preview-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .ap-visual { background: var(--blue); border-radius: 20px; padding: 44px 38px; position: relative; overflow: hidden; }
+    .ap-visual::before { content: ''; position: absolute; top: -60px; right: -60px; width: 240px; height: 240px; border-radius: 50%; background: rgba(255,255,255,0.06); }
+    .ap-visual::after { content: ''; position: absolute; bottom: -40px; left: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(253,150,28,0.15); }
+    .ap-visual h3 { font-size: 26px; font-weight: 800; color: white; line-height: 1.3; margin-bottom: 16px; position: relative; z-index: 1; }
+    .ap-visual p { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.8; position: relative; z-index: 1; }
+    .ap-body { font-size: 15px; color: var(--muted); line-height: 1.85; margin-bottom: 16px; }
+    .ap-link { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); font-weight: 700; font-size: 14px; text-decoration: none; margin-top: 10px; }
+    .ap-link:hover { color: var(--orange); }
+    .products-preview { padding: 90px 6%; background: var(--dark); position: relative; overflow: hidden; }
+    .products-preview::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 15% 85%, rgba(0,86,140,0.22) 0%, transparent 50%), radial-gradient(circle at 85% 15%, rgba(253,150,28,0.08) 0%, transparent 50%); }
+    .pp-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+    .pp-top { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+    .pp-top .sec-title { color: white; }
+    .pp-top .sec-title span { color: var(--orange); }
+    .pp-top a { color: rgba(255,255,255,0.6); font-size: 14px; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 2px; transition: color 0.2s; }
+    .pp-top a:hover { color: var(--orange); }
+    .pp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .pp-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 26px 24px; transition: transform 0.25s; text-decoration: none; display: block; }
+    .pp-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.07); }
+    .pp-card .pc-icon { font-size: 28px; margin-bottom: 14px; }
+    .pp-card .pc-title { font-size: 16px; font-weight: 700; color: white; margin-bottom: 8px; }
+    .pp-card .pc-body { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+    .cta-strip { background: var(--orange); padding: 70px 6%; }
+    .cta-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .cta-inner h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 800; color: white; margin-bottom: 14px; }
+    .cta-inner p { font-size: 16px; color: rgba(255,255,255,0.85); margin-bottom: 30px; line-height: 1.7; }
+    .btn-white { background: white; color: var(--orange); padding: 14px 36px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; transition: all 0.2s; display: inline-block; }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; } .hero-panel { display: none; } .intro-strip-inner { grid-template-columns: 1fr; gap: 24px; } .about-preview-inner { grid-template-columns: 1fr; } .pp-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .pp-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="splash-active">
+
+<!-- SPLASH SCREEN -->
+<div id="splash">
+  <img id="splash-logo" src="images/logo%20(5).png" alt="Sunlife Meditech"/>
+</div>
+<nav id="mainNav">
+  <a href="index.html" class="logo-wrap"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="why-us.html">Why Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-btn">Get in Touch</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<section id="home-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="dot"></span>Hospitals Trusted Supplier</div>
+      <h1 class="hero-h1">Supplying <span class="accent">Excellence</span><br>to Every Hospital</h1>
+      <p class="hero-p">Sunlife Meditech delivers a comprehensive range of medical products under one trusted brand name. Surgical, OT, hygiene, patient care and more, all from a single reliable source.</p>
+      <div class="hero-btns">
+        <a href="products.html" class="btn-primary">Explore Products</a>
+        <a href="about.html" class="btn-outline">About Us</a>
+      </div>
+    </div>
+    <div class="hero-panel rr">
+      <div class="hp-top">
+        <div class="hp-label">Product Categories</div>
+        <div class="hp-cats">
+          <div class="hp-cat"><span class="dot"></span>Surgical Supplies</div>
+          <div class="hp-cat"><span class="dot"></span>OT Equipment</div>
+          <div class="hp-cat"><span class="dot"></span>Personal Hygiene</div>
+          <div class="hp-cat"><span class="dot"></span>Patient Care</div>
+          <div class="hp-cat"><span class="dot"></span>General Medical</div>
+          <div class="hp-cat"><span class="dot"></span>Bulk Orders</div>
+        </div>
+      </div>
+      <div class="hp-bottom">
+        <div class="hp-card blue"><div class="hc-icon">&#127973;</div><div class="hc-title">Hospital Grade</div><div class="hc-sub">Every product meets clinical standards</div></div>
+        <div class="hp-card orange"><div class="hc-icon">&#128666;</div><div class="hc-title">Reliable Supply</div><div class="hc-sub">On-time, every time</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">Surgical Supplies<span class="sep"></span></span>
+    <span class="ticker-item">OT Equipment<span class="sep"></span></span>
+    <span class="ticker-item">Personal Hygiene<span class="sep"></span></span>
+    <span class="ticker-item">Patient Care<span class="sep"></span></span>
+    <span class="ticker-item">Quality Assured<span class="sep"></span></span>
+    <span class="ticker-item">Branded Products<span class="sep"></span></span>
+    <span class="ticker-item">General Medical Supplies<span class="sep"></span></span>
+    <span class="ticker-item">Sunlife Meditech<span class="sep"></span></span>
+    <span class="ticker-item">Surgical Supplies<span class="sep"></span></span>
+    <span class="ticker-item">OT Equipment<span class="sep"></span></span>
+    <span class="ticker-item">Personal Hygiene<span class="sep"></span></span>
+    <span class="ticker-item">Patient Care<span class="sep"></span></span>
+    <span class="ticker-item">Quality Assured<span class="sep"></span></span>
+    <span class="ticker-item">Branded Products<span class="sep"></span></span>
+    <span class="ticker-item">General Medical Supplies<span class="sep"></span></span>
+    <span class="ticker-item">Sunlife Meditech<span class="sep"></span></span>
+  </div>
+</div>
+
+<div class="intro-strip">
+  <div class="intro-strip-inner">
+    <div class="is-item reveal"><div class="is-icon">&#127942;</div><div class="is-title">Quality Assured</div><div class="is-body">Every product meets stringent clinical and quality benchmarks before it reaches your facility.</div></div>
+    <div class="is-item reveal"><div class="is-icon">&#128666;</div><div class="is-title">Reliable Delivery</div><div class="is-body">Consistent, on-time supply so your hospital never faces shortages or delays.</div></div>
+    <div class="is-item reveal"><div class="is-icon">&#128203;</div><div class="is-title">Complete Portfolio</div><div class="is-body">One supplier for all your medical product needs, from surgical to personal hygiene.</div></div>
+  </div>
+</div>
+
+<section class="about-preview">
+  <div class="about-preview-inner">
+    <div class="rl">
+      <div class="ap-visual">
+        <h3>Built for Healthcare.<br>Trusted by Hospitals.</h3>
+        <p>At Sunlife Meditech, we understand that hospitals need a reliable, consistent partner. We bring that reliability with every delivery.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="sec-tag">About Us</div>
+      <h2 class="sec-title">Your End-to-End Medical <span>Product Partner</span></h2>
+      <p class="ap-body">Sunlife Meditech is a dedicated medical product supplier committed to equipping hospitals and healthcare facilities with everything they need, under one roof and one trusted brand name.</p>
+      <p class="ap-body">From surgical essentials to personal hygiene products, our curated portfolio meets the diverse demands of modern healthcare. We are a key supplier to government institutions and major hospital chains.</p>
+      <a href="about.html" class="ap-link">Read Our Full Story &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<section class="products-preview">
+  <div class="pp-inner">
+    <div class="pp-top reveal">
+      <div>
+        <div class="sec-tag" style="color:var(--orange)"><span style="background:var(--orange);width:28px;height:2px;display:block"></span>Our Products</div>
+        <h2 class="sec-title" style="margin-top:8px">What We <span>Supply</span></h2>
+      </div>
+      <a href="products.html">View All Products &#8594;</a>
+    </div>
+    <div class="pp-grid">
+      <a href="products.html" class="pp-card reveal"><div class="pc-icon">&#128300;</div><div class="pc-title">Surgical Supplies</div><div class="pc-body">Instruments, disposables, sutures and gloves for all surgical procedures.</div></a>
+      <a href="products.html" class="pp-card reveal"><div class="pc-icon">&#127973;</div><div class="pc-title">OT Equipment</div><div class="pc-body">Drapes, gowns and sterilisation products meeting international standards.</div></a>
+      <a href="products.html" class="pp-card reveal"><div class="pc-icon">&#129470;</div><div class="pc-title">Personal Hygiene</div><div class="pc-body">Hospital-grade sanitisers, wipes, adult diapers and PPE for patients and staff.</div></a>
+      <a href="products.html" class="pp-card reveal"><div class="pc-icon">&#128716;</div><div class="pc-title">Patient Care</div><div class="pc-body">Wound care, mobility aids and bed management solutions.</div></a>
+      <a href="products.html" class="pp-card reveal"><div class="pc-icon">&#128138;</div><div class="pc-title">General Medical</div><div class="pc-body">IV supplies, bandages and everyday ward essentials, always in stock.</div></a>
+      <a href="products.html" class="pp-card reveal"><div class="pc-icon">&#128230;</div><div class="pc-title">Bulk and Custom Orders</div><div class="pc-body">Flexible ordering for hospitals of all sizes with reliable logistics.</div></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-inner reveal">
+    <h2>Ready to Partner with Sunlife Meditech?</h2>
+    <p>Send us your requirements and our team will get back to you within 24 hours.</p>
+    <a href="contact.html" class="btn-white">Get in Touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></div>
+      <p>A hospitals trusted medical product supplier delivering quality surgical, OT, hygiene and general medical supplies across the globe.</p>
+      <div class="footer-offices">
+        
+        <div class="fo-block"><div class="fo-label">Registered Office</div><div class="fo-addr">C-11, DSIDC, Patparganj Industrial Area,<br>New Delhi, 110092</div></div>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">Surgical Supplies</a></li><li><a href="products.html">OT Equipment</a></li><li><a href="products.html">Hygiene Products</a></li><li><a href="products.html">Patient Care</a></li><li><a href="products.html">General Medical</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&#169; 2026 <span>Sunlife Meditech</span>. All rights reserved.</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Splash screen animation
+  window.addEventListener("load", function() {
+    var splash = document.getElementById("splash");
+    var logo = document.getElementById("splash-logo");
+
+    // Step 1: Logo pops in (handled by CSS animation)
+    // Step 2: After 1.8s, logo flies up to navbar position
+    setTimeout(function() {
+      logo.classList.add("fly-up");
+    }, 1000);
+
+    // Step 3: After fly-up completes, hide splash and show page
+    setTimeout(function() {
+      splash.classList.add("hide");
+      document.body.classList.remove("splash-active");
+    }, 1800);
+
+    // Step 4: Remove splash from DOM completely
+    setTimeout(function() {
+      splash.remove();
+    }, 2400);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Sunlife Meditech</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .contact-main { padding: 90px 6%; background: var(--white); }
+    .contact-wrap { max-width: 1100px; margin: 0 auto; }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 56px; }
+    .contact-left { display: flex; flex-direction: column; gap: 14px; }
+    .addr-card { background: var(--cream); border-radius: 16px; padding: 26px 22px; border-left: 3px solid var(--blue); }
+    .addr-card.orange-border { border-left-color: var(--orange); }
+    .addr-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    .addr-label.orange { color: var(--orange); }
+    .addr-lines { font-size: 14px; color: var(--text); line-height: 1.9; }
+    .contact-divider { height: 1px; background: var(--border); margin: 4px 0; }
+    .cir-item { background: var(--cream); border-radius: 12px; padding: 16px 18px; display: flex; gap: 14px; align-items: center; }
+    .cir-icon { width: 40px; height: 40px; min-width: 40px; background: var(--blue); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .cir-icon.o { background: var(--orange); }
+    .cir-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+    .cir-val { font-size: 14px; color: var(--text); font-weight: 500; }
+    .contact-form-card { background: white; border-radius: 22px; padding: 42px 38px; box-shadow: 0 6px 36px rgba(0,0,0,0.07); border: 1px solid var(--border); }
+    .cf-title { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+    .cf-sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .fg { margin-bottom: 16px; }
+    .fg label { display: block; font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 7px; text-transform: uppercase; letter-spacing: 0.4px; }
+    .fg input, .fg textarea, .fg select { width: 100%; padding: 12px 15px; border: 1.5px solid var(--border); border-radius: 9px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: var(--text); background: var(--cream); outline: none; transition: border-color 0.2s, background 0.2s; }
+    .fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--blue); background: white; }
+    .fg textarea { resize: vertical; min-height: 110px; }
+    .cf-submit { width: 100%; padding: 15px; border: none; cursor: pointer; background: var(--blue); color: white; border-radius: 9px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; transition: all 0.2s; box-shadow: 0 4px 18px rgba(0,86,140,0.3); }
+    .cf-submit:hover { background: var(--blue-deep); transform: translateY(-1px); }
+    @media (max-width: 960px) { .contact-layout { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } .contact-form-card { padding: 28px 20px; } }
+  </style>
+</head>
+<body>
+<nav id="mainNav" class="solid">
+  <a href="index.html" class="logo-wrap"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="why-us.html">Why Us</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-btn">Get in Touch</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Contact Us</div>
+    <h1>Let's Work <span>Together</span></h1>
+    <p>Whether you are a hospital procurement team or a healthcare administrator, we would love to hear from you. We respond to all enquiries within 24 hours.</p>
+  </div>
+</div>
+<section class="contact-main">
+  <div class="contact-wrap">
+    <div class="contact-layout">
+      <div class="contact-left rl">
+        
+        <div class="addr-card orange-border">
+          <div class="addr-label orange">Registered Office</div>
+          <div class="addr-lines">C-11, DSIDC, Patparganj Industrial Area,<br>New Delhi, 110092</div>
+        </div>
+        <div class="contact-divider"></div>
+        <div class="cir-item">
+          <div class="cir-icon">&#128231;</div>
+          <div><div class="cir-label">Email</div><div class="cir-val">info@sunlifemeditech.com</div></div>
+        </div>
+        <div class="cir-item">
+          <div class="cir-icon o">&#9201;</div>
+          <div><div class="cir-label">Response Time</div><div class="cir-val">Within 24 hours</div></div>
+        </div>
+      </div>
+      <div class="rr">
+        <div class="contact-form-card">
+          <div class="cf-title">Send an Enquiry</div>
+          <div class="cf-sub">Fill in the form below and our team will get back to you shortly.</div>
+          <form action="https://formspree.io/f/xojyjvnk" method="POST">
+            <input type="hidden" name="_next" value="/thank-you.html"/>
+            
+            
+            <div class="form-row">
+              <div class="fg"><label>Your Name</label><input type="text" name="name" placeholder="Dr. / Mr. / Ms." required/></div>
+              <div class="fg"><label>Hospital or Organisation</label><input type="text" name="hospital" placeholder="Hospital Name" required/></div>
+            </div>
+            <div class="form-row">
+              <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="+91 / +971 / +44"/></div>
+              <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="you@hospital.com" required/></div>
+            </div>
+            <div class="fg">
+              <label>Product Category</label>
+              <select name="category">
+                <option value="">Select a category</option>
+                <option>Surgical Supplies</option>
+                <option>OT Equipment and Supplies</option>
+                <option>Personal Hygiene Products</option>
+                <option>General Medical Supplies</option>
+                <option>Patient Care Products</option>
+                <option>Bulk or Custom Orders</option>
+                <option>All or Multiple Categories</option>
+              </select>
+            </div>
+            <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us about your requirements, quantities needed or any questions you have..."></textarea></div>
+            <button type="submit" class="cf-submit" onclick="saveEmail()">Submit Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></div>
+      <p>A hospitals trusted medical product supplier delivering quality surgical, OT, hygiene and general medical supplies across the globe.</p>
+      <div class="footer-offices">
+        
+        <div class="fo-block"><div class="fo-label">Registered Office</div><div class="fo-addr">C-11, DSIDC, Patparganj Industrial Area,<br>New Delhi, 110092</div></div>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">Surgical Supplies</a></li><li><a href="products.html">OT Equipment</a></li><li><a href="products.html">Hygiene Products</a></li><li><a href="products.html">Patient Care</a></li><li><a href="products.html">General Medical</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&#169; 2026 <span>Sunlife Meditech</span>. All rights reserved.</p></div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+  function saveEmail() {
+    const email = document.querySelector('input[name="email"]').value;
+    if (email) sessionStorage.setItem('enquiry_email', email);
+  }
+</script>
+</body>
+</html>

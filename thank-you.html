@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You | Sunlife Meditech</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .thankyou-page { min-height: 100vh; background: var(--dark); display: flex; align-items: center; justify-content: center; padding: 100px 6%; position: relative; overflow: hidden; }
+    .thankyou-page::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(0,86,140,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,86,140,0.12) 1px, transparent 1px); background-size: 55px 55px; }
+    .ty-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 60px 50px; text-align: center; max-width: 560px; position: relative; z-index: 2; }
+    .ty-icon {
+      width: 80px; height: 80px; background: #22c55e;
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 28px;
+      box-shadow: 0 8px 32px rgba(34,197,94,0.4);
+    }
+    .ty-icon svg { width: 40px; height: 40px; }
+    .ty-heading { font-size: 30px; font-weight: 800; color: white; margin-bottom: 14px; line-height: 1.2; }
+    .ty-heading span { color: var(--orange); }
+    .ty-body { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 10px; }
+    .ty-email-box {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px; padding: 14px 20px; margin: 16px 0 28px;
+      font-size: 15px; color: white; font-weight: 600;
+      word-break: break-all;
+    }
+    .ty-btn { background: var(--orange); color: white; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; transition: all 0.2s; display: inline-block; }
+    .ty-btn:hover { background: var(--orange-deep); transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+<nav id="mainNav" class="solid">
+  <a href="index.html" class="logo-wrap"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="why-us.html">Why Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-btn">Get in Touch</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="thankyou-page">
+  <div class="ty-card">
+    <div class="ty-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h1 class="ty-heading">Thank You for <span>Your Enquiry</span></h1>
+    <p class="ty-body">We have received your message and will get back to you at:</p>
+    <div class="ty-email-box" id="visitorEmail">your email address</div>
+    <p class="ty-body">Our team will respond within 24 hours.</p>
+    <br/>
+    <a href="index.html" class="ty-btn">Back to Home</a>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  // Read the email from the URL query string that Netlify passes back
+  function getParam(name) {
+    const url = new URLSearchParams(window.location.search);
+    return url.get(name);
+  }
+
+  // Try to get email from URL params
+  const email = getParam('email');
+  if (email) {
+    document.getElementById('visitorEmail').textContent = email;
+  } else {
+    // Fallback: read from sessionStorage if set before form submit
+    const stored = sessionStorage.getItem('enquiry_email');
+    if (stored) {
+      document.getElementById('visitorEmail').textContent = stored;
+      sessionStorage.removeItem('enquiry_email');
+    }
+  }
+</script>
+</body>
+</html>

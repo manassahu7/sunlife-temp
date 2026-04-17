@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products | Sunlife Meditech</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .products-main { padding: 90px 6%; background: var(--white); }
+    .products-inner { max-width: 1200px; margin: 0 auto; }
+    .prod-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+    .prod-intro-text .sec-title { margin-top: 10px; }
+    .prod-intro-text p { font-size: 15px; color: var(--muted); line-height: 1.85; margin-top: 14px; }
+    .prod-intro-visual { background: var(--blue); border-radius: 18px; padding: 36px; position: relative; overflow: hidden; }
+    .prod-intro-visual::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.06); }
+    .prod-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; position: relative; z-index: 1; }
+    .prod-stat { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; text-align: center; }
+    .prod-stat .ps-icon { font-size: 28px; margin-bottom: 8px; }
+    .prod-stat .ps-title { font-size: 14px; font-weight: 700; color: white; margin-bottom: 4px; }
+    .prod-stat .ps-sub { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+    .prod-section { margin-bottom: 60px; }
+    .prod-section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 2px solid var(--border); }
+    .prod-section-icon { width: 52px; height: 52px; background: var(--blue-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+    .prod-section-icon.orange-bg { background: #fff4e6; }
+    .prod-section-title { font-size: 22px; font-weight: 800; color: var(--text); }
+    .prod-section-sub { font-size: 14px; color: var(--muted); margin-top: 2px; }
+    .prod-items { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .prod-item { background: var(--cream); border-radius: 12px; padding: 20px 18px; border-left: 3px solid var(--blue); transition: all 0.2s; }
+    .prod-item:hover { background: white; box-shadow: 0 4px 16px rgba(0,0,0,0.07); transform: translateX(4px); }
+    .prod-item:nth-child(3n+2) { border-left-color: var(--orange); }
+    .prod-item-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+    .prod-item-body { font-size: 13px; color: var(--muted); line-height: 1.65; }
+    .brand-strip { background: var(--dark); padding: 70px 6%; margin-top: 30px; }
+    .bs-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .bs-inner h2 { font-size: clamp(24px,3.5vw,38px); font-weight: 800; color: white; margin-bottom: 14px; }
+    .bs-inner p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 28px; }
+    .bs-tags { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .bs-tag { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); padding: 8px 18px; border-radius: 40px; font-size: 13px; font-weight: 500; }
+    @media (max-width: 960px) { .prod-intro { grid-template-columns: 1fr; } .prod-items { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .prod-items { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav id="mainNav" class="solid">
+  <a href="index.html" class="logo-wrap"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="why-us.html">Why Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-btn">Get in Touch</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Our Products</div>
+    <h1>Complete Medical <span>Supply Portfolio</span></h1>
+    <p>Everything a modern hospital needs, sourced, quality-checked and delivered under the Sunlife brand name.</p>
+  </div>
+</div>
+<section class="products-main">
+  <div class="products-inner">
+    <div class="prod-intro">
+      <div class="prod-intro-text rl">
+        <div class="sec-tag">One Brand. Every Category.</div>
+        <h2 class="sec-title">All Your Medical <span>Supplies. One Source.</span></h2>
+        <p>Sunlife Meditech brings together a comprehensive range of medical products under one trusted brand. Our portfolio covers every department and every need, so your procurement team deals with a single, reliable supplier.</p>
+      </div>
+      <div class="rr">
+        <div class="prod-intro-visual">
+          <div class="prod-stat-grid">
+            <div class="prod-stat"><div class="ps-icon">&#128300;</div><div class="ps-title">Surgical</div><div class="ps-sub">Full range of instruments and disposables</div></div>
+            <div class="prod-stat"><div class="ps-icon">&#127973;</div><div class="ps-title">OT Supplies</div><div class="ps-sub">Theatre-ready products and consumables</div></div>
+            <div class="prod-stat"><div class="ps-icon">&#129470;</div><div class="ps-title">Hygiene</div><div class="ps-sub">Infection control and PPE products</div></div>
+            <div class="prod-stat"><div class="ps-icon">&#128716;</div><div class="ps-title">Patient Care</div><div class="ps-sub">Recovery and ward support products</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prod-section reveal">
+      <div class="prod-section-header">
+        <div class="prod-section-icon">&#128300;</div>
+        <div><div class="prod-section-title">Surgical Supplies</div><div class="prod-section-sub">Instruments, disposables and consumables for all surgical procedures</div></div>
+      </div>
+      <div class="prod-items">
+        <div class="prod-item"><div class="prod-item-title">Surgical Instruments</div><div class="prod-item-body">Precision instruments for general and specialty surgical procedures.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Disposable Drapes and Covers</div><div class="prod-item-body">Sterile single-use drapes for all surgical setups.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Sutures and Wound Closure</div><div class="prod-item-body">Absorbable and non-absorbable sutures across all sizes.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Surgical Gloves</div><div class="prod-item-body">Sterile and examination gloves in all sizes.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Blades and Scalpels</div><div class="prod-item-body">High-quality sterile blades for precise incisions.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Sponges and Swabs</div><div class="prod-item-body">X-ray detectable and standard gauze sponges.</div></div>
+      </div>
+    </div>
+
+    <div class="prod-section reveal">
+      <div class="prod-section-header">
+        <div class="prod-section-icon orange-bg">&#127973;</div>
+        <div><div class="prod-section-title">OT Equipment and Supplies</div><div class="prod-section-sub">Everything needed to run a safe and efficient operation theatre</div></div>
+      </div>
+      <div class="prod-items">
+        <div class="prod-item"><div class="prod-item-title">OT Gowns and Drapes</div><div class="prod-item-body">Sterile surgical gowns and procedural drapes meeting international standards.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Sterilisation Products</div><div class="prod-item-body">Sterilisation pouches, wraps and indicator tapes.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Anesthesia Accessories</div><div class="prod-item-body">Masks, circuits and breathing system components.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Surgical Caps and Masks</div><div class="prod-item-body">Non-woven caps and fluid-resistant surgical masks.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Suction and Irrigation</div><div class="prod-item-body">Suction tubes, bulb syringes and irrigation sets.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Electrosurgery Accessories</div><div class="prod-item-body">Diathermy pencils, plates and cables.</div></div>
+      </div>
+    </div>
+
+    <div class="prod-section reveal">
+      <div class="prod-section-header">
+        <div class="prod-section-icon">&#129470;</div>
+        <div><div class="prod-section-title">Personal Hygiene Products</div><div class="prod-section-sub">Hospital-grade hygiene and infection control solutions</div></div>
+      </div>
+      <div class="prod-items">
+        <div class="prod-item"><div class="prod-item-title">Hand Sanitisers</div><div class="prod-item-body">Alcohol-based sanitisers for clinical and general ward use.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Disinfectant Wipes</div><div class="prod-item-body">Surface and skin disinfectant wipes for all areas.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Adult Diapers</div><div class="prod-item-body">High-absorbency adult diapers for bedridden and incontinent patients, available in all sizes.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Baby and Patient Wipes</div><div class="prod-item-body">Soft, hypoallergenic wipes for patient hygiene and skin care.</div></div>
+        <div class="prod-item"><div class="prod-item-title">PPE Kits</div><div class="prod-item-body">Complete personal protective equipment sets for staff safety.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Examination Gloves</div><div class="prod-item-body">Latex-free nitrile gloves for clinical examinations.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Face Masks</div><div class="prod-item-body">3-ply and N95 masks for staff and patient protection.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Patient Hygiene Kits</div><div class="prod-item-body">Comprehensive hygiene packs for admitted patients.</div></div>
+      </div>
+    </div>
+
+    <div class="prod-section reveal">
+      <div class="prod-section-header">
+        <div class="prod-section-icon orange-bg">&#128716;</div>
+        <div><div class="prod-section-title">Patient Care Products</div><div class="prod-section-sub">Supporting patient comfort, recovery and ward management</div></div>
+      </div>
+      <div class="prod-items">
+        <div class="prod-item"><div class="prod-item-title">Wound Care Dressings</div><div class="prod-item-body">Absorbent, antimicrobial and specialty wound dressings.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Bandages and Tapes</div><div class="prod-item-body">Elastic, crepe and adhesive bandages for all uses.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Bed Protection Products</div><div class="prod-item-body">Underpads, mattress protectors and draw sheets.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Urological Products</div><div class="prod-item-body">Catheters, urine bags and related accessories.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Feeding and Nutrition Aids</div><div class="prod-item-body">Nasogastric tubes, feeding sets and syringes.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Mobility Aids</div><div class="prod-item-body">Slings, supports and mobilisation accessories.</div></div>
+      </div>
+    </div>
+
+    <div class="prod-section reveal">
+      <div class="prod-section-header">
+        <div class="prod-section-icon">&#128138;</div>
+        <div><div class="prod-section-title">General Medical Supplies</div><div class="prod-section-sub">Everyday essentials for wards, OPDs and ICUs</div></div>
+      </div>
+      <div class="prod-items">
+        <div class="prod-item"><div class="prod-item-title">IV Cannulas and Sets</div><div class="prod-item-body">Peripheral cannulas, IV sets and extension lines.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Syringes and Needles</div><div class="prod-item-body">Disposable syringes across all volumes and needle gauges.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Blood Collection Products</div><div class="prod-item-body">Vacutainers, lancets and collection tubes.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Oxygen Therapy Products</div><div class="prod-item-body">Masks, cannulas and tubing for oxygen delivery.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Diagnostic Consumables</div><div class="prod-item-body">Tongue depressors, ear specula and otoscope covers.</div></div>
+        <div class="prod-item"><div class="prod-item-title">Cotton and Gauze</div><div class="prod-item-body">Sterile and non-sterile cotton rolls and gauze pieces.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="brand-strip">
+  <div class="bs-inner reveal">
+    <h2>All Products. One Trusted Brand.</h2>
+    <p>Every product in our portfolio is supplied under the Sunlife Meditech brand name, giving hospitals a single, accountable source for all their medical supply needs.</p>
+    <div class="bs-tags">
+      <span class="bs-tag">Quality Certified</span>
+      <span class="bs-tag">Hospital Grade</span>
+      <span class="bs-tag">Reliable Supply</span>
+      <span class="bs-tag">Bulk Orders Available</span>
+      <span class="bs-tag">Custom Requirements Accepted</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></div>
+      <p>A hospitals trusted medical product supplier delivering quality surgical, OT, hygiene and general medical supplies across the globe.</p>
+      <div class="footer-offices">
+        
+        <div class="fo-block"><div class="fo-label">Registered Office</div><div class="fo-addr">C-11, DSIDC, Patparganj Industrial Area,<br>New Delhi, 110092</div></div>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">Surgical Supplies</a></li><li><a href="products.html">OT Equipment</a></li><li><a href="products.html">Hygiene Products</a></li><li><a href="products.html">Patient Care</a></li><li><a href="products.html">General Medical</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&#169; 2026 <span>Sunlife Meditech</span>. All rights reserved.</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

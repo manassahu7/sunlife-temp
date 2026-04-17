@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Sunlife Meditech</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .story { padding: 90px 6%; background: var(--white); }
+    .story-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .story-left { position: sticky; top: 100px; }
+    .story-left .sec-title { margin-top: 12px; }
+    .story-intro { font-size: 18px; font-weight: 400; line-height: 1.85; color: var(--text); margin: 20px 0 16px; border-left: 3px solid var(--orange); padding-left: 20px; }
+    .story-body { font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 14px; }
+    .values { padding: 90px 6%; background: var(--cream); }
+    .values-inner { max-width: 1100px; margin: 0 auto; }
+    .values-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; margin-top: 50px; }
+    .val-card { background: white; border-radius: 18px; padding: 34px 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border-top: 4px solid var(--blue); transition: transform 0.25s; }
+    .val-card:hover { transform: translateY(-5px); }
+    .val-card:nth-child(even) { border-top-color: var(--orange); }
+    .val-card .vc-icon { font-size: 34px; margin-bottom: 16px; }
+    .val-card .vc-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .val-card .vc-body { font-size: 14px; color: var(--muted); line-height: 1.8; }
+    .what-we-do { padding: 90px 6%; background: var(--dark); position: relative; overflow: hidden; }
+    .what-we-do::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(0,86,140,0.3) 0%, transparent 55%); }
+    .wwd-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .wwd-inner .sec-title { color: white; }
+    .wwd-inner .sec-title span { color: var(--orange); }
+    .wwd-inner .sec-sub { color: rgba(255,255,255,0.55); margin-bottom: 50px; }
+    .wwd-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .wwd-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 26px 22px; }
+    .wwd-item .wi-num { font-size: 36px; font-weight: 800; color: rgba(255,255,255,0.06); line-height: 1; margin-bottom: 16px; }
+    .wwd-item .wi-title { font-size: 16px; font-weight: 700; color: white; margin-bottom: 8px; }
+    .wwd-item .wi-body { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.75; }
+    .commitment { padding: 90px 6%; background: var(--blue); }
+    .commitment-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .commitment-inner h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: white; line-height: 1.2; margin-bottom: 20px; }
+    .commitment-inner p { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.85; margin-bottom: 14px; }
+    .commitment-inner a { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: white; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; margin-top: 16px; transition: all 0.2s; }
+    .commitment-inner a:hover { background: var(--orange-deep); transform: translateY(-2px); }
+    @media (max-width: 960px) { .story-inner { grid-template-columns: 1fr; } .story-left { position: static; } .values-grid { grid-template-columns: 1fr; } .wwd-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .wwd-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav id="mainNav" class="solid">
+  <a href="index.html" class="logo-wrap"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="why-us.html">Why Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-btn">Get in Touch</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">About Us</div>
+    <h1>Built for <span>Healthcare.</span><br>Trusted by Hospitals.</h1>
+    <p>Sunlife Meditech was founded with one clear purpose, to make medical procurement simpler, more reliable and more consistent for hospitals everywhere.</p>
+  </div>
+</div>
+<section class="story">
+  <div class="story-inner">
+    <div class="story-left rl">
+      <div class="sec-tag">Our Story</div>
+      <h2 class="sec-title">Who We <span>Are</span></h2>
+    </div>
+    <div class="reveal">
+      <p class="story-intro">Sunlife Meditech is a dedicated medical product supplier committed to equipping hospitals and healthcare facilities with everything they need, under one roof and one trusted brand.</p>
+      <p class="story-body">From surgical essentials and operation theatre equipment to personal hygiene products and general medical supplies, our curated portfolio is designed to meet the diverse and critical demands of modern healthcare institutions.</p>
+      <p class="story-body">We operate with a singular focus: make procurement simple, reliable and consistent for hospitals. No compromises on quality. No delays in delivery. No need to chase multiple vendors for different product categories.</p>
+      <p class="story-body">We are a key supplier to government institutions and major hospital chains. The Sunlife brand stands for consistency. Every product that carries our name has been selected and quality-checked to meet the standards that hospitals and their patients deserve.</p>
+    </div>
+  </div>
+</section>
+<section class="values">
+  <div class="values-inner">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+      <div class="sec-tag" style="justify-content:center">Our Values</div>
+      <h2 class="sec-title" style="margin-top:10px">What Drives <span>Everything We Do</span></h2>
+    </div>
+    <div class="values-grid">
+      <div class="val-card reveal"><div class="vc-icon">&#127919;</div><div class="vc-title">Our Mission</div><div class="vc-body">To be the most reliable medical product partner for hospitals we serve. One supplier. Every category. Zero compromise on quality or delivery timelines.</div></div>
+      <div class="val-card reveal"><div class="vc-icon">&#128065;</div><div class="vc-title">Our Vision</div><div class="vc-body">A world where quality medical supplies are consistently accessible to every healthcare provider, regardless of their size or location.</div></div>
+      <div class="val-card reveal"><div class="vc-icon">&#9989;</div><div class="vc-title">Quality First</div><div class="vc-body">Every product in our portfolio meets stringent quality benchmarks. We do not compromise on what goes into your hospital, because your patients deserve the best.</div></div>
+      <div class="val-card reveal"><div class="vc-icon">&#129309;</div><div class="vc-title">True Partnership</div><div class="vc-body">We are not just a supplier. We are a long-term partner in your healthcare delivery. Your procurement challenges are our challenges to solve.</div></div>
+    </div>
+  </div>
+</section>
+<section class="what-we-do">
+  <div class="wwd-inner">
+    <div class="reveal">
+      <div class="sec-tag" style="color:var(--orange)"><span style="background:var(--orange);width:28px;height:2px;display:block"></span>What We Do</div>
+      <h2 class="sec-title" style="margin-top:10px">How We <span>Serve Hospitals</span></h2>
+      <p class="sec-sub" style="margin-top:12px;margin-bottom:44px;">Our operations are built around making hospital procurement as smooth as possible.</p>
+    </div>
+    <div class="wwd-grid">
+      <div class="wwd-item reveal"><div class="wi-num">01</div><div class="wi-title">Product Sourcing</div><div class="wi-body">We source and quality-check every product in our portfolio, ensuring only the best reaches your facility.</div></div>
+      <div class="wwd-item reveal"><div class="wi-num">02</div><div class="wi-title">Brand Consistency</div><div class="wi-body">All products are unified under the Sunlife brand, giving you a single trusted name to rely on across all categories.</div></div>
+      <div class="wwd-item reveal"><div class="wi-num">03</div><div class="wi-title">Reliable Logistics</div><div class="wi-body">Our supply chain is built to deliver on time, every time, so your hospital never faces shortages or delays.</div></div>
+      <div class="wwd-item reveal"><div class="wi-num">04</div><div class="wi-title">Dedicated Support</div><div class="wi-body">A dedicated account team manages your orders and resolves any queries quickly and professionally.</div></div>
+      <div class="wwd-item reveal"><div class="wi-num">05</div><div class="wi-title">Flexible Ordering</div><div class="wi-body">From small clinics to large multi-specialty hospitals, we accommodate orders of all sizes with custom requirements.</div></div>
+      <div class="wwd-item reveal"><div class="wi-num">06</div><div class="wi-title">Complete Portfolio</div><div class="wi-body">Surgical, OT, hygiene, patient care and more. One supplier for every medical product category your hospital needs.</div></div>
+    </div>
+  </div>
+</section>
+<section class="commitment">
+  <div class="commitment-inner reveal">
+    <h2>Our Commitment to You</h2>
+    <p>When you partner with Sunlife Meditech, you get more than products. You get a team that is invested in the smooth running of your hospital, a consistent supply of quality-certified products, and a single point of contact for all your medical supply needs.</p>
+    <a href="contact.html">Start a Conversation &#8594;</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="images/logo%20(5).png" alt="Sunlife Meditech"/></div>
+      <p>A hospitals trusted medical product supplier delivering quality surgical, OT, hygiene and general medical supplies across the globe.</p>
+      <div class="footer-offices">
+        
+        <div class="fo-block"><div class="fo-label">Registered Office</div><div class="fo-addr">C-11, DSIDC, Patparganj Industrial Area,<br>New Delhi, 110092</div></div>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h5>Products</h5><ul><li><a href="products.html">Surgical Supplies</a></li><li><a href="products.html">OT Equipment</a></li><li><a href="products.html">Hygiene Products</a></li><li><a href="products.html">Patient Care</a></li><li><a href="products.html">General Medical</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>&#169; 2026 <span>Sunlife Meditech</span>. All rights reserved.</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
