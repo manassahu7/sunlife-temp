@@ -1,0 +1,46 @@
+backend:
+  name: github
+  repo: manassahu7/sunlife-meditech
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "pages"
+    label: "Website Pages"
+    files:
+
+      - label: "Home Page"
+        name: "home"
+        file: "_data/home.json"
+        fields:
+          - { label: "Hero Badge Text", name: "hero_badge", widget: "string", default: "Hospitals Trusted Supplier" }
+          - { label: "Hero Heading Line 1", name: "hero_h1", widget: "string", default: "Supplying Excellence" }
+          - { label: "Hero Heading Line 2", name: "hero_h2", widget: "string", default: "to Every Hospital" }
+          - { label: "Hero Description", name: "hero_desc", widget: "text", default: "Sunlife Meditech delivers a comprehensive range of medical products under one trusted brand name." }
+          - { label: "About Preview Heading", name: "about_heading", widget: "string", default: "Your End-to-End Medical Product Partner" }
+          - { label: "About Preview Text 1", name: "about_text1", widget: "text" }
+          - { label: "About Preview Text 2", name: "about_text2", widget: "text" }
+          - { label: "CTA Heading", name: "cta_heading", widget: "string", default: "Ready to Partner with Sunlife Meditech?" }
+          - { label: "CTA Description", name: "cta_desc", widget: "text" }
+
+      - label: "About Page"
+        name: "about"
+        file: "_data/about.json"
+        fields:
+          - { label: "Page Heading", name: "heading", widget: "string" }
+          - { label: "Page Subheading", name: "subheading", widget: "text" }
+          - { label: "Story Introduction", name: "story_intro", widget: "text" }
+          - { label: "Story Paragraph 1", name: "story_p1", widget: "text" }
+          - { label: "Story Paragraph 2", name: "story_p2", widget: "text" }
+          - { label: "Story Paragraph 3", name: "story_p3", widget: "text" }
+
+      - label: "Contact Page"
+        name: "contact"
+        file: "_data/contact.json"
+        fields:
+          - { label: "Email Address", name: "email", widget: "string", default: "info@sunlifemeditech.com" }
+          - { label: "Phone Number", name: "phone", widget: "string", default: "+91 XXXXX XXXXX" }
+          - { label: "Corporate Office Address", name: "corp_address", widget: "text", default: "3rd Floor\n45 Albemarle Street\nMayfair, London\nW1S 4JL" }
+          - { label: "Registered Office Address", name: "reg_address", widget: "text", default: "C-11, DSIDC, Patparganj\nNew Delhi (East)\n110092" }
